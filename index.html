@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="96x96" />
 
   <title>Flip the coin | devChallenges.io</title>
 
@@ -16,7 +16,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    #headering {
+      font-size: 48px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: aliceblue;
+      border: 10px solid #000000;
+    }
     body {
       height: 100vh;
       background-color: rgba(33, 35, 56, 0.747);
@@ -55,32 +60,30 @@
     Random
   
     -->
-  <footer>
-    <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank">devChallenges.io</a>.
-    </div>
-  </footer>
+
 
   <center>
+ 
     <div class="container">
-      <h1 style="font-size: 32px;
+      <h1 id="headering">Flip the Coin</h1>
+    <br>
+    <br>
+    <br>
+          <h1 style="font-size: 32px;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      color: aliceblue;">Flip the Coin</h1>
+      color: aliceblue;">Press The Button Or The Image ToFlip the Coin</h1>
       <br>
       <br>
       <br>
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
+
       <div class="coin">
-        <img src="resources/heads.svg" alt="Coin Head" id="coinImage" />
+        <img src="heads.svg" alt="Coin Head" id="coinImage" onclick=flip() />
       </div>
       <div class="coin">
-        <img src="resources/shadow.svg" alt="Coin shadow" id="coinshadow" />
+        <img src="shadow.svg" alt="Coin shadow" id="coinshadow" />
       </div>
       <br>
       <br>
@@ -88,9 +91,7 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
+     
       <button id="flipButton" onclick=flip()>Flip the Coin</button>
       <br>
       <br>
@@ -103,6 +104,12 @@
         <p id="resultText">Result: Head</p>
       </div>
     </div>
+    <footer style="background-color: aqua;">
+    <div class="author-info">
+      Coded by <a href="#https://github.com/Arinjaychaudhary/flip-a-coin">Dazai_Nakahara</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank">devChallenges.io</a>.
+    </div>
+  </footer>
   </center>
   <script>
     const coinImage = document.getElementById('coinImage');
@@ -117,10 +124,10 @@
     function flip() {
       var randomInteger = getRandomInt(0, 1);
       if (randomInteger == 0) {
-        coinImage.src = "resources/heads.svg";
+        coinImage.src = "heads.svg";
         document.getElementById("resultText").innerHTML = "Result: Head";
       } else if (randomInteger == 1) {
-        coinImage.src = "resources/tails.svg";
+        coinImage.src = "tails.svg";
         document.getElementById("resultText").innerHTML = "Result: Tail";
       }
 
